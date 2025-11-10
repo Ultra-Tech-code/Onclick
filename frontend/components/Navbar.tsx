@@ -6,12 +6,13 @@ import { useTheme } from '../app/providers';
 import { usePathname } from 'next/navigation';
 import { Sun, Moon, Menu, X, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { DynamicWidget } from '@dynamic-labs/sdk-react-core';
 
 export default function Navbar() {
   const { isDark, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
-  
+
   // Get the handle from the current path or localStorage
   const getHandle = () => {
     if (typeof window !== 'undefined') {
@@ -102,16 +103,8 @@ export default function Navbar() {
               )}
             </motion.button>
 
-            {/* Get Started Button */}
-            <Link href="/role-selection">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary px-6 py-3 font-semibold"
-              >
-                Get Started
-              </motion.button>
-            </Link>
+            {/* Dynamic Widget */}
+            <DynamicWidget />
 
             {/* Mobile menu button */}
             <button
@@ -157,11 +150,9 @@ export default function Navbar() {
               >
                 Pricing
               </a>
-              <Link href="/role-selection">
-                <button className="w-full btn-primary py-3 font-semibold">
-                  Get Started
-                </button>
-              </Link>
+              <div className="w-full">
+                <DynamicWidget />
+              </div>
             </div>
           </motion.div>
         )}
