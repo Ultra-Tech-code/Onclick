@@ -189,7 +189,6 @@ export default function LandingPage() {
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-32 left-10 h-96 w-96 rounded-full bg-blue-200/40 blur-3xl" />
         <div className="absolute top-1/3 -right-24 h-80 w-80 rounded-full bg-indigo-200/40 blur-3xl" />
-        <div className="absolute bottom-0 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-sky-200/40 blur-[120px]" />
       </div>
 
       <Navbar />
@@ -220,80 +219,44 @@ export default function LandingPage() {
             />
           </div>
 
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              
+          <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.1 }}
+              className="mt-6 text-4xl sm:text-6xl xl:text-7xl font-black tracking-tight text-white text-center"
+            >
+              Seamless Web3 payments for everyone
+            </motion.h1>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 0.1 }}
-                className="mt-6 text-4xl sm:text-6xl xl:text-7xl font-black tracking-tight text-white"
-              >
-                Seamless Web3 payments for everyone
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 0.2 }}
-                className="mt-6 text-lg md:text-xl text-white/90 leading-relaxed max-w-xl"
-              >
-                Create beautiful payment pages, accept crypto globally, and grow your community with the most intuitive Web3 payment platform.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="mt-10 flex flex-col sm:flex-row gap-4"
-              >
-                <Link
-                  href="/role-selection"
-                  className="inline-flex items-center justify-center rounded-full bg-white text-blue-600 px-8 py-4 text-lg font-semibold shadow-xl hover:bg-slate-100 transition-all"
-                >
-                  Create Your Page
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-                <Link
-                  href="/public-page"
-                  className="inline-flex items-center justify-center rounded-full border border-white/60 bg-transparent px-8 py-4 text-lg font-semibold text-white hover:bg-white/10 transition-all"
-                >
-                  Explore Creators
-                </Link>
-              </motion.div>
-            </div>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.2 }}
+              className="mt-6 text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto"
+            >
+              Create beautiful payment pages, accept crypto globally, and grow your community with the most intuitive Web3 payment platform.
+            </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, delay: 0.2 }}
-              className="relative mx-auto h-[420px] w-[420px]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <div className="absolute inset-0 rounded-full bg-white/90 shadow-2xl" />
-              <div className="absolute inset-10 rounded-full border border-white/60 shadow-inner" />
-              <div className="absolute inset-20 rounded-full border border-blue-200/70" />
-              <div className="absolute inset-[6.5rem] rounded-full bg-white/95 backdrop-blur flex flex-col items-center justify-center text-center px-6">
-                <span className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-500">OnClick Canvas</span>
-                <p className="mt-3 text-base font-semibold text-slate-600">
-                  Compose immersive payment experiences with modular blocks, progress trackers, and layered rewards.
-                </p>
-              </div>
-
-              {/* Floating dots */}
-              <div className="absolute -top-10 left-6 w-40 rounded-3xl bg-white shadow-lg shadow-blue-200/40 px-5 py-4">
-                <p className="text-xs font-semibold text-slate-500">Live supporters</p>
-                <div className="mt-2 flex items-center justify-between">
-                  <span className="text-2xl font-black text-slate-900">486</span>
-                  <span className="text-xs font-semibold text-green-500">+12 today</span>
-                </div>
-              </div>
-              <div className="absolute -bottom-12 right-4 w-48 rounded-3xl bg-white shadow-lg shadow-indigo-200/40 px-5 py-4">
-                <p className="text-xs font-semibold text-slate-500">Goal completion</p>
-                <div className="mt-2 h-2 w-full rounded-full bg-slate-200 overflow-hidden">
-                  <div className="h-full w-2/3 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500" />
-                </div>
-              </div>
+              <Link
+                href="/role-selection"
+                className="inline-flex items-center justify-center rounded-full bg-white text-blue-600 px-8 py-4 text-lg font-semibold shadow-xl hover:bg-slate-100 transition-all"
+              >
+                Create Your Page
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+              <Link
+                href="/public-page"
+                className="inline-flex items-center justify-center rounded-full border border-white/60 bg-transparent px-8 py-4 text-lg font-semibold text-white hover:bg-white/10 transition-all"
+              >
+                Explore Creators
+              </Link>
             </motion.div>
           </div>
         </section>
@@ -370,8 +333,13 @@ export default function LandingPage() {
         </section>
 
         {/* Roadmap */}
-        <section className="py-24 px-4 sm:px-6 lg:px-12 bg-white/70">
-          <div className="max-w-5xl mx-auto">
+        <section className="relative py-24 px-4 sm:px-6 lg:px-12 overflow-hidden">
+          <div
+            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('https://res.cloudinary.com/dxswouxj5/image/upload/v1763029768/3392075_zeeyay.jpg')" }}
+          />
+          <div className="absolute inset-0 z-10 bg-white/35 backdrop-blur-[1px]" />
+          <div className="relative z-20 max-w-5xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -408,8 +376,13 @@ export default function LandingPage() {
         </section>
 
         {/* Feature stream */}
-        <section className="py-24 px-4 sm:px-6 lg:px-12 bg-white/70">
-          <div className="max-w-6xl mx-auto text-center">
+        <section className="relative py-24 px-4 sm:px-6 lg:px-12 overflow-hidden">
+          <div
+            className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('https://res.cloudinary.com/dxswouxj5/image/upload/v1763036363/10515443_mt9s3c.png')" }}
+          />
+          <div className="absolute inset-0 z-10 bg-white/35 backdrop-blur-[1px]" />
+          <div className="relative z-20 max-w-6xl mx-auto text-center">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -424,7 +397,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="relative mx-auto mt-20 h-[500px] w-full max-w-6xl px-4">
+          <div className="relative z-20 mx-auto mt-20 h-[500px] w-full max-w-6xl px-4">
             {/* Top row - 3 cards evenly spaced */}
             <DiamondCard feature={features[0]} index={0} positionClass="left-[8%] top-0" />
             <DiamondCard feature={features[1]} index={1} positionClass="left-1/2 -translate-x-1/2 top-0" />
@@ -437,89 +410,68 @@ export default function LandingPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-32 relative overflow-hidden bg-gradient-to-b from-white to-blue-50/30">
-          {/* Animated background orbs */}
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute top-20 -left-40 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"
-          />
-          <motion.div
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 1
-            }}
-            className="absolute -bottom-20 -right-40 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl"
-          />
-          
-          <div className="relative max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+        <section className="relative py-32 px-4 sm:px-6 lg:px-12 overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none">
+            <motion.div
+              className="absolute -top-24 left-0 h-72 w-72 rounded-full bg-blue-200/45 blur-3xl"
+              animate={{ opacity: [0.25, 0.6, 0.3], scale: [1, 1.1, 0.95] }}
+              transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            <motion.div
+              className="absolute top-1/2 right-8 h-80 w-80 -translate-y-1/2 rounded-full bg-sky-200/40 blur-[120px]"
+              animate={{ opacity: [0.2, 0.45, 0.25], scale: [0.95, 1.1, 1] }}
+              transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut', repeatType: 'mirror' }}
+            />
+            <motion.div
+              className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-indigo-200/45 blur-3xl"
+              animate={{ opacity: [0.25, 0.5, 0.25], scale: [0.9, 1.08, 1] }}
+              transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+            />
+          </div>
+ 
+          <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="glass-card rounded-[3rem] p-16 shadow-2xl border border-white/50"
+              className="rounded-[3rem] primary-gradient px-10 py-16"
             >
-              <motion.p 
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-blue-600 font-bold text-lg mb-4 tracking-wide uppercase"
-              >
-                One click. Global reach. Instant crypto.
-              </motion.p>
-              
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-5xl md:text-6xl font-black text-slate-900 mb-6 leading-tight"
+                className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight"
               >
-                Start Accepting Payments
-                <br />
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  In Minutes
-                </span>
+                One click. Global reach. Instant crypto.
               </motion.h2>
-              
-              <motion.p 
+ 
+              <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto"
+                className="mt-6 text-lg md:text-xl text-white/85 max-w-3xl mx-auto"
               >
-                Create your personalized payment page and share it with the world. No setup fees, no hidden costs.
+                Open your universal payment page, accept local currency or crypto with zero friction, and receive non-custodial settlements straight to your wallet.
               </motion.p>
-              
-              <Link href="/role-selection">
-                <motion.button
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="primary-gradient text-white text-xl font-bold px-12 py-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+ 
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="mt-12 flex justify-center"
+              >
+                <Link
+                  href="/role-selection"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-12 py-4 text-lg font-semibold text-blue-600 shadow-lg transition-all hover:-translate-y-1 hover:bg-slate-100"
                 >
-                  Get Started for Free
-                </motion.button>
-              </Link>
+                  Create Your Page
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </section>
