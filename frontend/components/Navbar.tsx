@@ -6,12 +6,14 @@ import { useTheme } from '../app/providers';
 import { usePathname } from 'next/navigation';
 import { Sun, Moon, Menu, X, Sparkles } from 'lucide-react';
 import Link from 'next/link';
-import { DynamicWidget } from '@dynamic-labs/sdk-react-core';
+import { useAppKit, useAppKitAccount } from '@reown/appkit/react';
 
 export default function Navbar() {
   const { isDark, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { open } = useAppKit();
+  const { address, isConnected } = useAppKitAccount();
 
   // Get the handle from the current path or localStorage
   const getHandle = () => {
@@ -104,7 +106,12 @@ export default function Navbar() {
             </motion.button>
 
             {/* Dynamic Widget */}
-            <DynamicWidget />
+            <button
+              onClick={() => open()}
+              className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:opacity-90 transition-opacity font-medium"
+            >
+              {isConnected ? `${address?.slice(0, 6)}...${address?.slice(-4)}` : 'Connect Wallet'}
+            </button>
 
             {/* Mobile menu button */}
             <button
@@ -151,7 +158,15 @@ export default function Navbar() {
                 Pricing
               </a>
               <div className="w-full">
-                <DynamicWidget />
+                <button
+                  onClick={() => {
+                    open();
+                    setIsMenuOpen(false);
+                  }}
+                  className="w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:opacity-90 transition-opacity font-medium"
+                >
+                  {isConnected ? `${address?.slice(0, 6)}...${address?.slice(-4)}` : 'Connect Wallet'}
+                </button>
               </div>
             </div>
           </motion.div>
